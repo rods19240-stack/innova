@@ -1,0 +1,46 @@
+app.get("/materias/:grupo", async (req, res) => {
+
+  const { grupo } = req.params;
+
+  const session = driver.session();
+
+  try {
+
+    const result = await session.run(
+      `
+      MATCH (m:Materia)-[:EN_GRUPO]->(g:Grupo)
+      WHERE g.nombre = $grupo
+      RETURN m.nombre AS materia
+      `,
+      { grupo }
+    );
+
+    console.log(
+      result.records.map(r => r.get("materia"))
+    );
+
+    const materias = result.records.map(record => ({
+      materia: record.get("materia")
+    }));
+
+    res.json({
+      success: true,
+      materias
+    });
+
+  } catch(error){
+
+    console.log(error);
+
+    res.status(500).json({
+      success:false,
+      message:"Error obteniendo materias"
+    });
+
+  } finally {
+
+    await session.close();
+
+  }
+
+});

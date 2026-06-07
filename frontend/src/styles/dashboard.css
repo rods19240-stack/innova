@@ -1,0 +1,157 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:black;
+}
+
+.dashboard-container{
+  display:flex;
+  min-height:100vh;
+  background:#0a0a0a;
+}
+
+.sidebar{
+  width:240px;
+  background:#111;
+  padding:20px;
+  border-right:2px solid #d4a94f;
+
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.sidebar h2{
+  color:#d4a94f;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.sidebar button{
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  background:#1c1c1c;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+  font-size:15px;
+}
+
+.sidebar button:hover{
+  background:#d4a94f;
+  color:black;
+  transform:scale(1.03);
+}
+
+.logout-btn{
+  margin-top:auto;
+  background:#d4a94f !important;
+  color:black !important;
+  font-weight:bold;
+}
+
+.main-content{
+  flex:1;
+  padding:20px;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:20px;
+
+  background:#111;
+  padding:20px;
+  border-radius:20px;
+  border:1px solid #d4a94f;
+
+  color:white;
+}
+
+.topbar h1{
+  color:#d4a94f;
+}
+
+.top-right{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.clock{
+  background:#1c1c1c;
+  padding:10px 15px;
+  border-radius:12px;
+}
+
+.profile{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#d4a94f;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:25px;
+  color:black;
+  font-weight:bold;
+}
+
+.dashboard-header{
+  width:100%;
+  border-radius:20px;
+  margin-bottom:20px;
+}
+
+.cards-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#111;
+  padding:30px;
+  border-radius:20px;
+  color:white;
+  text-align:center;
+  border:1px solid #d4a94f;
+
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card h3{
+  color:#d4a94f;
+  margin-bottom:10px;
+}
+
+.card p{
+  font-size:35px;
+  font-weight:bold;
+}
+
+body.light .dashboard{
+  background:#f1f5f9;
+
+  color:black;
+}
+
+body.light .card{
+  background:white;
+
+  color:black;
+}

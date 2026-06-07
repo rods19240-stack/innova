@@ -1,0 +1,92 @@
+.config-container{
+  min-height:100vh;
+
+  background:#0f172a;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  color:white;
+}
+
+.config-card{
+  width:400px;
+
+  background:#1e293b;
+
+  padding:30px;
+
+  border-radius:20px;
+
+  box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.config-card h1{
+  margin-bottom:20px;
+
+  color:#d4a94f;
+}
+
+.admin-info{
+  margin-bottom:25px;
+}
+
+.admin-info h2{
+  margin-bottom:10px;
+}
+
+.config-btn,
+.logout-btn{
+  width:100%;
+
+  padding:12px;
+
+  margin-bottom:12px;
+
+  border:none;
+
+  border-radius:10px;
+
+  cursor:pointer;
+
+  font-size:15px;
+
+  font-weight:bold;
+}
+
+.config-btn{
+  background:#334155;
+
+  color:white;
+}
+
+.logout-btn{
+  background:#d4a94f;
+
+  color:black;
+}
+
+body.light .dashboard{
+  background:#f1f5f9;
+
+  color:black;
+}
+
+body.light .card{
+  background:white;
+
+  color:black;
+}
+
+.logout-btn{
+  position:relative;
+
+  z-index:10;
+}
+
+.config-card{
+  position:relative;
+}

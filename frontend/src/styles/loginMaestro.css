@@ -1,0 +1,88 @@
+.login-maestro-container{
+
+  min-height:100vh;
+
+  background:#050505;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+}
+
+.login-maestro-card{
+
+  width:400px;
+
+  background:#111;
+
+  border:1px solid #d4a94f;
+
+  border-radius:20px;
+
+  padding:40px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+
+  box-shadow:0 0 25px rgba(212,169,79,0.2);
+}
+
+.login-maestro-card h1{
+
+  color:#d4a94f;
+
+  text-align:center;
+}
+
+.login-maestro-card input{
+
+  padding:15px;
+
+  border:none;
+
+  border-radius:10px;
+
+  background:#222;
+
+  color:white;
+
+  font-size:16px;
+}
+
+.login-maestro-card button{
+
+  padding:15px;
+
+  border:none;
+
+  border-radius:10px;
+
+  background:#d4a94f;
+
+  color:black;
+
+  font-size:16px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.login-maestro-card button:hover{
+
+  background:#f0c15d;
+}
+
+.error-text{
+
+  color:red;
+
+  text-align:center;
+}

@@ -1,0 +1,226 @@
+.maestro-container{
+
+  width:100%;
+
+  min-height:100vh;
+
+  background:#050505;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:flex-start;
+
+  padding:40px 20px;
+
+  overflow-y:auto;
+}
+
+.maestro-card{
+
+  width:100%;
+
+  max-width:1000px;
+
+  background:#111;
+
+  border:1px solid #d4a94f;
+
+  border-radius:25px;
+
+  padding:35px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:25px;
+
+  box-shadow:0 0 25px rgba(212,169,79,0.2);
+}
+
+.maestro-card h1{
+
+  color:#d4a94f;
+
+  text-align:center;
+
+  font-size:45px;
+}
+
+.maestro-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+  gap:20px;
+}
+
+.maestro-box{
+
+  background:#1a1a1a;
+
+  border-radius:18px;
+
+  padding:25px;
+
+  text-align:center;
+}
+
+.maestro-box h3{
+
+  color:#d4a94f;
+
+  margin-bottom:10px;
+}
+
+.maestro-box p{
+
+  color:white;
+
+  font-size:30px;
+}
+
+.cerrar-btn{
+
+  align-self:flex-start;
+
+  background:#d4a94f;
+
+  color:black;
+
+  border:none;
+
+  padding:12px 20px;
+
+  border-radius:12px;
+
+  font-size:16px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+}
+
+.info-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+  gap:20px;
+}
+
+.info-box{
+
+  background:#1a1a1a;
+
+  border-radius:18px;
+
+  padding:25px;
+
+  text-align:center;
+}
+
+.info-box h3{
+
+  color:#d4a94f;
+
+  margin-bottom:10px;
+}
+
+.info-box p{
+
+  color:white;
+
+  font-size:22px;
+}
+
+.alumno-item{
+
+  background:#1a1a1a;
+
+  border-radius:15px;
+
+  padding:20px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:10px;
+
+  margin-top:20px;
+}
+
+.alumno-item h3{
+
+  color:#d4a94f;
+}
+
+.alumno-item p{
+
+  color:white;
+}
+
+.alumno-item input{
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:10px;
+
+  background:#222;
+
+  color:white;
+}
+
+.alumno-item button{
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:10px;
+
+  background:#d4a94f;
+
+  color:black;
+
+  font-weight:bold;
+
+  cursor:pointer;
+}
+
+.alumno-item button:hover{
+
+  background:#f0c15d;
+}
+
+.mapa-btn{
+
+  align-self:flex-start;
+
+  background:#d4a94f;
+
+  color:black;
+
+  border:none;
+
+  padding:12px 20px;
+
+  border-radius:12px;
+
+  font-size:16px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}

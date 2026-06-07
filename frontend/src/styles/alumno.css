@@ -1,0 +1,535 @@
+html,
+body{
+
+  width:100%;
+
+  min-height:100%;
+
+  overflow-y:auto !important;
+
+  overflow-x:hidden;
+
+  background:#050505;
+}
+
+#root{
+
+  width:100%;
+
+  min-height:100vh;
+
+  overflow-y:auto;
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.alumno-container{
+
+  width:100%;
+
+  min-height:100vh;
+
+  background:#050505;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:flex-start;
+
+  padding:40px 20px;
+
+  overflow-y:auto !important;
+
+  overflow-x:hidden;
+
+  position:relative;
+
+
+/* =========================
+   TARJETA PRINCIPAL
+========================= */
+
+.alumno-card{
+
+  width:100%;
+
+  max-width:1100px;
+
+  background:#111;
+
+  border:1px solid #d4a94f;
+
+  border-radius:25px;
+
+  padding:35px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:25px;
+
+  box-shadow:0 0 25px rgba(212,169,79,0.2);
+
+  margin-bottom:40px;
+
+  overflow:visible;
+}
+
+/* =========================
+   BOTON
+========================= */
+
+.volver-btn{
+
+  align-self:flex-start;
+
+  background:#d4a94f;
+
+  color:black;
+
+  border:none;
+
+  padding:12px 20px;
+
+  border-radius:12px;
+
+  font-size:16px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.volver-btn:hover{
+
+  background:#f0c15d;
+
+  transform:scale(1.05);
+}
+
+.mapa-btn{
+
+  align-self:flex-start;
+
+  background:#d4a94f;
+
+  color:black;
+
+  border:none;
+
+  padding:12px 20px;
+
+  border-radius:12px;
+
+  font-size:16px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+
+/* =========================
+   TITULO
+========================= */
+
+.alumno-card h1{
+
+  color:#d4a94f;
+
+  font-size:48px;
+
+  text-align:center;
+
+  line-height:1.1;
+
+  word-break:break-word;
+}
+
+/* =========================
+   INFO GRID
+========================= */
+
+.info-grid{
+
+  width:100%;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:20px;
+}
+
+.info-box{
+
+  background:#1a1a1a;
+
+  border-radius:18px;
+
+  padding:25px;
+
+  text-align:center;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  overflow:hidden;
+}
+
+.info-box h3{
+
+  color:#d4a94f;
+
+  margin-bottom:10px;
+
+  font-size:24px;
+}
+
+.info-box p{
+
+  color:white;
+
+  font-size:26px;
+
+  word-wrap:break-word;
+}
+
+/* =========================
+   TABLA
+========================= */
+
+.materias-container{
+
+  width:100%;
+
+  overflow-x:auto;
+}
+
+.materias-container h2{
+
+  color:#d4a94f;
+
+  text-align:center;
+
+  margin-bottom:20px;
+
+  font-size:32px;
+}
+
+.materias-table{
+
+  width:100%;
+
+  min-width:850px;
+
+  border-collapse:collapse;
+
+  border-radius:15px;
+
+  overflow:hidden;
+
+  background:#1a1a1a;
+}
+
+.materias-table thead{
+
+  background:#d4a94f;
+}
+
+.materias-table th{
+
+  color:black;
+
+  padding:15px;
+
+  font-size:18px;
+
+  white-space:nowrap;
+}
+
+.materias-table td{
+
+  padding:15px;
+
+  color:white;
+
+  text-align:center;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  white-space:nowrap;
+}
+
+.materias-table tbody tr:nth-child(even){
+
+  background:#1d1d1d;
+}
+
+.parcial-btn{
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+  color:#7db6ff;
+}
+
+.parcial-btn:hover{
+
+  background:#2a2a2a;
+
+  color:#9fd0ff;
+}
+
+/* =========================
+   DETALLES
+========================= */
+
+.detalle-row{
+
+  background:#181818;
+}
+
+.detalle-box{
+
+  padding:30px !important;
+}
+
+/* =========================
+   RUBRICA
+========================= */
+
+.rubrica-container{
+
+  width:100%;
+
+  overflow-x:auto;
+}
+
+.rubrica-container h2{
+
+  color:#d4a94f;
+
+  margin-bottom:20px;
+
+  text-align:center;
+
+  font-size:30px;
+}
+
+.rubrica-table{
+
+  width:100%;
+
+  min-width:700px;
+
+  border-collapse:collapse;
+
+  overflow:hidden;
+
+  border-radius:12px;
+
+  background:#1a1a1a;
+}
+
+.rubrica-table thead{
+
+  background:#d4a94f;
+}
+
+.rubrica-table th{
+
+  color:black;
+
+  padding:12px;
+
+  white-space:nowrap;
+}
+
+.rubrica-table td{
+
+  padding:12px;
+
+  text-align:center;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  color:white;
+
+  white-space:nowrap;
+}
+
+.rubrica-table tbody tr:nth-child(even){
+
+  background:#202020;
+}
+
+.detalle-rubrica{
+  display: grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.rubrica-card{
+  background: #1a1a1a;
+  border: 1px solid #d4a94f;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+}
+
+.rubrica-card h4{
+  color: #d4a94f;
+  margin-bottom: 10px;
+}
+
+.alumno-card p{
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.final{
+  background: #2a2a2a;
+}
+
+/* =========================
+   EXTRA INFO
+========================= */
+
+.extra-info{
+
+  margin-top:25px;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:20px;
+}
+
+.extra-card{
+
+  background:#222;
+
+  border-radius:15px;
+
+  padding:20px;
+
+  text-align:center;
+
+  border:1px solid rgba(212,169,79,0.2);
+}
+
+.extra-card h3{
+
+  color:#d4a94f;
+
+  margin-bottom:10px;
+}
+
+.extra-card p{
+
+  color:white;
+
+  font-size:26px;
+}
+
+/* =========================
+   MENSAJES
+========================= */
+
+.sin-calif{
+
+  color:white;
+
+  text-align:center;
+
+  font-size:22px;
+
+  padding:20px;
+}
+
+.sin-materias{
+
+  color:white;
+
+  text-align:center;
+
+  font-size:22px;
+
+  padding:20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+  .alumno-card{
+
+    padding:25px;
+  }
+
+  .alumno-card h1{
+
+    font-size:40px;
+  }
+
+}
+
+@media(max-width:700px){
+
+  .alumno-container{
+
+    padding:20px 10px;
+  }
+
+  .alumno-card{
+
+    padding:20px;
+  }
+
+  .alumno-card h1{
+
+    font-size:30px;
+  }
+
+  .info-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .extra-info{
+
+    grid-template-columns:1fr;
+  }
+
+  .info-box p{
+
+    font-size:22px;
+  }
+
+  .materias-table{
+
+    min-width:700px;
+  }
+
+  .rubrica-table{
+
+    min-width:650px;
+  }
+
+}
