@@ -1036,6 +1036,51 @@ app.get("/alumnos", async (req, res) => {
 
 });
 
+app.post("/login-qr", async (req, res) => {
+
+  const { codigo } = req.body;
+
+  const session = driver.session();
+
+  try {
+
+    const result = await session.run(
+      `
+      MATCH (a:Alumno)
+      WHERE a.matricula = $codigo
+      RETURN a
+      `,
+      { codigo }
+    );
+
+    if (result.records.length > 0) {
+
+      const alumno = result.records[0].get("a").properties;
+
+      return res.json({
+        success: true,
+        usuario: alumno
+      });
+
+    }
+
+    return res.json({
+      success: false,
+      message: "Alumno no encontrado"
+    });
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      success: false,
+      message: "Error en QR login"
+    });
+  } finally {
+    await session.close();
+  }
+
+});
+
 /* =========================
    PUERTO
 ========================= */

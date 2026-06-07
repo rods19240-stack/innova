@@ -25,7 +25,7 @@ function Login() {
 
     try {
 
-      const response = await fetch("http://localhost:3000/login", {
+      const response = await fetch("https://innova-qb0s.onrender.com/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -79,7 +79,7 @@ function Login() {
 
       console.log("QR enviado a backend:", codigoFinal);
 
-      const response = await fetch("http://localhost:3000/login-qr", {
+      const response = await fetch("https://innova-qb0s.onrender.com/login-qr", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
