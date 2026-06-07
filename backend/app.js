@@ -15,6 +15,13 @@ const upload = multer({
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send(`
+    <h1>🚀 INNOVA API</h1>
+    <p>Servidor funcionando correctamente</p>
+  `);
+});
+
 app.post(
   "/importar-calificaciones",
   upload.single("archivo"),
@@ -856,91 +863,6 @@ app.get("/exportar-alumnos", async (req, res) => {
 
 });
 
-app.post("/incidencia", async (req, res) => {
-
-  const { matricula, motivo } = req.body;
-
-  const session = driver.session();
-
-  try {
-
-    await session.run(
-      `
-      MATCH (a:Alumno {matricula:$matricula})
-
-      CREATE (i:Incidencia {
-        motivo:$motivo,
-        fecha:$fecha,
-        horas:1
-      })
-
-      CREATE (a)-[:TIENE_INCIDENCIA]->(i)
-
-      RETURN a
-      `,
-      {
-        matricula,
-        motivo,
-        fecha: new Date().toLocaleString()
-      }
-    );
-
-    res.json({
-      success: true,
-      message: "Incidencia registrada"
-    });
-
-  } catch (error) {
-
-    console.log(error);
-
-    res.status(500).json({
-      success: false,
-      message: "Error registrando incidencia"
-    });
-
-  } finally {
-    await session.close();
-  }
-
-});
-
-app.get("/coordinador/:carrera", async (req, res) => {
-
-  const { carrera } = req.params;
-
-  const session = driver.session();
-
-  try {
-
-    const result = await session.run(
-      `
-      MATCH (a:Alumno)
-      WHERE a.carrera = $carrera
-
-      OPTIONAL MATCH (a)-[:TIENE_INCIDENCIA]->(i:Incidencia)
-
-      RETURN a, count(i) AS incidencias
-      `,
-      { carrera }
-    );
-
-    const alumnos = result.records.map(r => ({
-      alumno: r.get("a").properties,
-      incidencias: r.get("incidencias").low
-    }));
-
-    res.json({
-      success: true,
-      alumnos
-    });
-
-  } finally {
-    await session.close();
-  }
-
-});
-
 app.get(
   "/exportar-plantilla/:grupo/:materia",
   async (req, res) => {
@@ -1068,22 +990,6 @@ app.get(
   }
 );
 
-
-/* =========================
-   PUERTO
-========================= */
-
-const PORT =
-  process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-
-  console.log(
-    `Servidor en puerto ${PORT}`
-  );
-
-});
-
 /* =========================
    OBTENER ALUMNOS
 ========================= */
@@ -1127,5 +1033,20 @@ app.get("/alumnos", async (req, res) => {
     await session.close();
 
   }
+
+});
+
+/* =========================
+   PUERTO
+========================= */
+
+const PORT =
+  process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+
+  console.log(
+    `Servidor en puerto ${PORT}`
+  );
 
 });
